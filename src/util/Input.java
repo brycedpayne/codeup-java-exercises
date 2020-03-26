@@ -25,10 +25,10 @@ public class Input {
     }
     public boolean yesNo(String prompt) {
         System.out.print(prompt);
-        String response = scanner.next();
-        if (response.equalsIgnoreCase("y")) {
+        char response = scanner.next().toLowerCase().charAt(0);
+        if (Character.compare(response,'y') == 0) {
             return true;
-        } else if (response.equalsIgnoreCase("n")) {
+        } else if (Character.compare(response,'n') == 0) {
             return false;
         } else {
             return yesNo();
