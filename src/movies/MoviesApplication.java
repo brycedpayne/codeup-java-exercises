@@ -20,8 +20,25 @@ public class MoviesApplication {
         System.out.println("\nJAVA MOVIE DATABASE:");
 
         do {
-            System.out.println("\n*=========================================================*\n\nWhat would you like to do?\n\n\t0 - exit\n\t1 - view all movies\n\t2 - view movies in the animated category\n\t3 - view movies in the drama category\n\t4 - view movies in the horror category\n\t5 - view movies in the scifi category\n\t6 - view movies in the comedy category\n\t7 - view movies in the musicals category\n\t8 - add a new movie\n\n");
+//
+            System.out.println("*----------------------------------------------------*");
+            System.out.printf("|%-26s %25s|","","");
+            System.out.printf("\n|\t%-44s %4s|"," What would you like to do?","");
+            System.out.printf("\n|%-26s %25s|","","");
+            System.out.printf("\n|\t%-44s %4s|"," 1 - view all movies","");
+            System.out.printf("\n|\t%-44s %4s|"," 2 - view movies in the animated category","");
+            System.out.printf("\n|\t%-44s %4s|"," 3 - view movies in the drama category","");
+            System.out.printf("\n|\t%-44s %4s|"," 4 - view movies in the horror category","");
+            System.out.printf("\n|\t%-44s %4s|"," 5 - view movies in the scifi category","");
+            System.out.printf("\n|\t%-44s %4s|"," 6 - view movies in the comedy category","");
+            System.out.printf("\n|\t%-44s %4s|"," 7 - view movies in the musicals category","");
+            System.out.printf("\n|\t%-44s %4s|"," 8 - add a new movie","");
+            System.out.printf("\n|\t%-44s %4s|"," 0 - exit","");
+            System.out.printf("\n|%-26s %25s|","","");
+            System.out.println("\n*----------------------------------------------------*\n");
             option = input.getInt(0, 8, "Enter your choice: ");
+
+//            System.out.printf("\n|\t0 - exit%-50s|\n","");
 
             switch (option) {
                 case 0:
@@ -33,7 +50,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 2:
-                    System.out.println("\nAnimated movies:\n*---------------------------------------------------------*");
+                    System.out.println("\nAnimated movies:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("animated")) {
                             System.out.println("\t" + movie.getName());
@@ -41,7 +58,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 3:
-                    System.out.println("\nDramas:\n*---------------------------------------------------------*");
+                    System.out.println("\nDramas:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("drama")) {
                             System.out.println("\t" + movie.getName());
@@ -49,7 +66,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 4:
-                    System.out.println("\nHorrors:\n*---------------------------------------------------------*");
+                    System.out.println("\nHorrors:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("horror")) {
                             System.out.println("\t" + movie.getName());
@@ -57,7 +74,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 5:
-                    System.out.println("\nSciFis:\n*---------------------------------------------------------*");
+                    System.out.println("\nSciFis:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("scifi")) {
                             System.out.println("\t" + movie.getName());
@@ -65,7 +82,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 6:
-                    System.out.println("\nComedies:\n*---------------------------------------------------------*");
+                    System.out.println("\nComedies:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("comedy")) {
                             System.out.println("\t" + movie.getName());
@@ -73,7 +90,7 @@ public class MoviesApplication {
                     }
                     break;
                 case 7:
-                    System.out.println("\nMusicals:\n*---------------------------------------------------------*");
+                    System.out.println("\nMusicals:\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
                         if (movie.getCategory().equalsIgnoreCase("musical")) {
                             System.out.println("\t" + movie.getName());
@@ -81,14 +98,15 @@ public class MoviesApplication {
                     }
                     break;
                 case 8:
-                    System.out.println("\nAdd a new movie:\n*---------------------------------------------------------*\n");
+                    System.out.println("\nAdd a new movie:\n*----------------------------------------------------*\n");
                     String title = input.getString("Title: ");
-                    String category = input.getString("Category (animated/drama/horror/scifi/comedy/musical): ").toLowerCase();
+                    String category = input.getString("Category\n(animated/drama/horror/scifi/comedy/musical): ").toLowerCase();
                     Movie add = new Movie(title, category);
                     movies = addMovie(movies,add);
                     System.out.println("\n" +title + " - added to database.");
                     break;
             }
+            System.out.println();
         } while (option != 0);
     }
 }
