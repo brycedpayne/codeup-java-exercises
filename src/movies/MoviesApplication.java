@@ -17,7 +17,7 @@ public class MoviesApplication {
         Movie[] movies = MoviesArray.findAll();
         int option;
 
-        System.out.println("\nJAVA MOVIE DATABASE:");
+        System.out.println("\nJAVA MOVIE DATABASE:\n");
 
         do {
 //
