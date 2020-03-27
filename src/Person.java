@@ -5,21 +5,29 @@ public class Person {
     private String name;
     private int age;
 
-    // returns the person's name
-    public String getName(){
-        return name;
-    }
 
-    // constructor
+    // constructor prop name
     public Person (String name){
         this.name = name;
     }
+    // constructor prop name and age
     public Person (String name,int age){
         this.name = name;
         this.age = age;
     }
-
-    // changes the name property to the passed value
+    // getter for age returns age prop
+    public int getAge() {
+        return age;
+    }
+    //setter for age prop
+    public void setAge(int age) {
+        this.age = age;
+    }
+    // getter for name returns the person's name
+    public String getName(){
+        return name;
+    }
+    // setter for name changes the name property to the passed value
     public void setName(String name){
         this.name = name;
     }

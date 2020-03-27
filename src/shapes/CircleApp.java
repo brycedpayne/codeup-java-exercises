@@ -12,11 +12,11 @@ public class CircleApp {
 
 
     public static void main(String[] args) {
-        Input input = new Input();
-        boolean doAgain;
+        Input input = new Input(); //create new Input instance.
+        boolean doAgain;  //init variable for repeating.
 
         do {
-            Circle circle = new Circle(input.getDouble("Please enter a radius: "));
+            Circle circle = new Circle(input.getDouble("Please enter a radius: ")); //init ne Circle instance.
             System.out.println("Area: " + circle.getArea());
             System.out.println("Circumference: " + circle.getCircumference());
             countCircles();
