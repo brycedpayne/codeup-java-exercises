@@ -1,6 +1,6 @@
 public class ServerNameGenerator {
 
-    private static String[] adjs = {"Angry", "Sleek", "Fast", "Inverted", "Ubiquitous", "Sideways", "Remarkable", "Wild", "Clever", "Crazy"};
+    private static String[] adjs = {"Angry", "Sleek", "Fast", "Mean", "Ubiquitous", "Green", "Remarkable", "Wild", "Clever", "Crazy"};
     private static String[] nouns = {"Ripley", "Newt", "Apone", "Hicks", "Hudson", "Vasquez", "Ghorman", "Bishop", "Drake", "Xenomorph"};
 
 

@@ -13,6 +13,7 @@ public class MoviesApplication {
     }
 
     public static void main(String[] args) {
+        String[] categories = {"none","all","animated","drama","horror","scifi","comedy","musical"};
         Input input = new Input();
         Movie[] movies = MoviesArray.findAll();
         int option;
@@ -50,49 +51,14 @@ public class MoviesApplication {
                     }
                     break;
                 case 2:
-                    System.out.println("\nAnimated movies:\n*----------------------------------------------------*");
-                    for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("animated")) {
-                            System.out.println("\t" + movie.getName());
-                        }
-                    }
-                    break;
                 case 3:
-                    System.out.println("\nDramas:\n*----------------------------------------------------*");
-                    for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("drama")) {
-                            System.out.println("\t" + movie.getName());
-                        }
-                    }
-                    break;
                 case 4:
-                    System.out.println("\nHorrors:\n*----------------------------------------------------*");
-                    for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("horror")) {
-                            System.out.println("\t" + movie.getName());
-                        }
-                    }
-                    break;
                 case 5:
-                    System.out.println("\nSciFis:\n*----------------------------------------------------*");
-                    for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("scifi")) {
-                            System.out.println("\t" + movie.getName());
-                        }
-                    }
-                    break;
                 case 6:
-                    System.out.println("\nComedies:\n*----------------------------------------------------*");
-                    for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("comedy")) {
-                            System.out.println("\t" + movie.getName());
-                        }
-                    }
-                    break;
                 case 7:
-                    System.out.println("\nMusicals:\n*----------------------------------------------------*");
+                    System.out.println("\n" +categories[option] + ":" +"\n*----------------------------------------------------*");
                     for (Movie movie : movies) {
-                        if (movie.getCategory().equalsIgnoreCase("musical")) {
+                        if (movie.getCategory().equalsIgnoreCase(categories[option])) {
                             System.out.println("\t" + movie.getName());
                         }
                     }
@@ -108,5 +74,6 @@ public class MoviesApplication {
             }
             System.out.println();
         } while (option != 0);
+        System.out.println("Goodbye");
     }
 }

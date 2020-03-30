@@ -1,7 +1,7 @@
 public class ArraysExercises {
 
     public static Person[] addPerson(Person[] arr, Person person) {
-        Person newArr[] = new Person[arr.length + 1]; // creates a new array that is one index longer
+        Person[] newArr = new Person[arr.length + 1]; // creates a new array that is one index longer
         System.arraycopy(arr, 0, newArr, 0, arr.length); //copies the old array to the new array
         newArr[arr.length] = person; //adds the new Person to the last array index of the new array
         return newArr; //returns the new array
