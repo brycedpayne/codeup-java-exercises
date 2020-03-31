@@ -15,7 +15,7 @@ public class Square extends Quadrilateral {
 
     @Override
     public void setLength(double length) {
-        this.width = side;
+        this.length = side;
     }
 
     @Override
