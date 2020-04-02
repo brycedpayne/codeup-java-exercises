@@ -60,6 +60,7 @@ public class Input {
 
         try {                                    //validation try/catch.
             i = Integer.parseInt(input.trim());
+//            i = Integer.valueOf(input);
         } catch (NumberFormatException nfe) {
             System.out.println("Invalid format...");
             return getInt(x, y, prompt);
@@ -72,25 +73,12 @@ public class Input {
         return i;
     }
 
-    //    public int getInt(int x, int y, String prompt) {
-//        System.out.printf(prompt);
-//        String input = scanner.nextLine();
-//        int numInput = Integer.parseInt(input);
-//        if (numInput < x || numInput > y) {
-//            return getInt(x, y);
-//        }
-//        return numInput;
-//    }
     //getInt method w/ default prompt. returns input int.
     public int getInt() {
         return getInt("Please enter an integer: ");
     }
 
-    //    public int getInt(String prompt) {
-//        System.out.print(prompt);
-//        String input = scanner.nextLine();
-//        return Integer.parseInt(input);
-//    }
+
     //getInt method w/ custom prompt. returns input int.
     public int getInt(String prompt) {
         System.out.print(prompt);
@@ -129,23 +117,11 @@ public class Input {
         return d;
     }
 
-    //    public double getDouble(double x, double y, String prompt) {
-//        System.out.printf(prompt);
-//        double numInput = scanner.nextDouble();
-//        if (numInput < x || numInput > y) {
-//            return getDouble(x, y);
-//        }
-//        return numInput;
-//    }
     //getDouble method w/ default prompt. returns input double.
     public double getDouble() {
         return getDouble("Please an decimal number: ");
     }
 
-    //    public double getDouble(String prompt) {
-//        System.out.print(prompt);
-//        return scanner.nextDouble();
-//    }
     //getDouble method w/ custom prompt. returns input double.
     public double getDouble(String prompt) {
         System.out.print(prompt);
@@ -153,10 +129,39 @@ public class Input {
 
         try {
             return Double.parseDouble(input.trim());
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException nfe) {
             System.out.println("Invalid format...");
             return getDouble(prompt);
         }
     }
 
+    public Integer getBinary() {
+        return getBinary("Enter a binary number: ");
+    }
+
+    public Integer getBinary(String prompt) {
+        System.out.print(prompt);
+        String input = scanner.nextLine();
+
+        try {
+            return Integer.valueOf(input, 2);
+        } catch (Exception e) {
+            return getBinary(prompt);
+        }
+    }
+
+    public Integer getHex() {
+        return getHex("Enter a Hexadecimal number: ");
+    }
+
+    public Integer getHex(String prompt) {
+        System.out.print(prompt);
+        String input = scanner.nextLine();
+
+        try {
+            return Integer.valueOf(input, 16);
+        } catch (Exception e) {
+            return getHex(prompt);
+        }
+    }
 }
