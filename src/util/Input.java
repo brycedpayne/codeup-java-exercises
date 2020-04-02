@@ -1,5 +1,6 @@
 package util;
 
+import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class Input {
@@ -146,6 +147,7 @@ public class Input {
         try {
             return Integer.valueOf(input, 2);
         } catch (Exception e) {
+            System.out.println("There was an exception...");
             return getBinary(prompt);
         }
     }
@@ -161,7 +163,39 @@ public class Input {
         try {
             return Integer.valueOf(input, 16);
         } catch (Exception e) {
+            System.out.println("There was an exception...");
             return getHex(prompt);
         }
     }
+
+    public String intToBin(){
+        return intToBin("Enter an integer to convert to binary: ");
+    }
+
+    public String intToBin(String prompt){
+        int input = getInt(prompt);
+
+        try {
+            return Integer.toBinaryString(input);
+        } catch (Exception e){
+            System.out.println("There was an exception...");
+            return intToHex(prompt);
+        }
+    }
+
+    public String intToHex(){
+        return intToHex("Enter an integer to convert to hexadecimal: ");
+    }
+
+    public String intToHex(String prompt){
+        int input = getInt(prompt);
+
+        try {
+            return Integer.toHexString(input);
+        } catch (Exception e){
+            System.out.println("There was an exception...");
+            return intToHex(prompt);
+        }
+    }
+
 }
