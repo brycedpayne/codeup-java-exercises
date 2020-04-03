@@ -168,34 +168,44 @@ public class Input {
         }
     }
 
-    public String intToBin(){
+    public String intToBin() {
         return intToBin("Enter an integer to convert to binary: ");
     }
 
-    public String intToBin(String prompt){
+    public String intToBin(String prompt) {
         int input = getInt(prompt);
 
         try {
             return Integer.toBinaryString(input);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("There was an exception...");
             return intToHex(prompt);
         }
     }
 
-    public String intToHex(){
+    public String intToHex() {
         return intToHex("Enter an integer to convert to hexadecimal: ");
     }
 
-    public String intToHex(String prompt){
+    public String intToHex(String prompt) {
         int input = getInt(prompt);
 
         try {
             return Integer.toHexString(input);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("There was an exception...");
             return intToHex(prompt);
         }
     }
 
+    public boolean addCheck(int[] arr, int k) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == k) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
