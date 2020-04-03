@@ -141,8 +141,7 @@ public class Input {
     }
 
     public Integer getBinary(String prompt) {
-        System.out.print(prompt);
-        String input = scanner.nextLine();
+        String input = getString(prompt);
 
         try {
             return Integer.valueOf(input, 2);
@@ -157,8 +156,7 @@ public class Input {
     }
 
     public Integer getHex(String prompt) {
-        System.out.print(prompt);
-        String input = scanner.nextLine();
+        String input = getString(prompt);
 
         try {
             return Integer.valueOf(input, 16);
